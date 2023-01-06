@@ -2,6 +2,12 @@ import sys
 from dsl_token import *
 
 
+__ITALICS_KEYWORD = "textit"
+__BOLD_KEYWORD = "textbf"
+__UNDERLINE_KEYWORD = "underline"
+__COLOR_KEYWORD = "textcolor"
+
+
 def __SkipSpaces(str, curPos):
     for i in range(curPos, len(str)):
         if not str[i].isspace():

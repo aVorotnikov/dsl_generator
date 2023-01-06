@@ -29,16 +29,6 @@ class NameToken(Token):
         Underline = 2
 
 
-    @staticmethod
-    def GetLabelsCommands(label):
-        if NameToken.Label.Italics == label:
-            return "textit"
-        elif NameToken.Label.Bold == label:
-            return "textbf"
-        elif NameToken.Label.Underline == label:
-            return "underline"
-
-
     class Colors(Enum):
         NoColor = 0
         Red = 1,
@@ -60,9 +50,6 @@ class NameToken(Token):
         Purple = 17,
         Teal = 18,
         Violet = 19
-
-
-    COLOR_COMMAND = "textcolor"
 
 
     def __init__(self, name, labels, color):
