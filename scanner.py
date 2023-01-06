@@ -1,4 +1,6 @@
 import sys
+from enum import Enum
+
 from dsl_token import *
 
 
@@ -6,6 +8,34 @@ __ITALICS_KEYWORD = "textit"
 __BOLD_KEYWORD = "textbf"
 __UNDERLINE_KEYWORD = "underline"
 __COLOR_KEYWORD = "textcolor"
+
+
+class __DetectedKeyword(Enum):
+    NotDetected = 0
+    Italics = 1
+    Bold = 2
+    Underline = 3
+    Color = 4
+
+
+def __CheckKeyword(str, curPos):
+    def ModifiedFinder(keyword, str, curPos):
+        return str.find(keyword, curPos, curPos + len(keyword))
+    if -1 != ModifiedFinder(__ITALICS_KEYWORD, str, curPos):
+        return __DetectedKeyword.Italics
+    if -1 != ModifiedFinder(__BOLD_KEYWORD, str, curPos):
+        return __DetectedKeyword.Bold
+    if -1 != ModifiedFinder(__UNDERLINE_KEYWORD, str, curPos):
+        return __DetectedKeyword.Underline
+    if -1 != ModifiedFinder(__COLOR_KEYWORD, str, curPos):
+        return __DetectedKeyword.Color
+    return __DetectedKeyword.NotDetected
+
+
+def __CheckEscapeSequence(str, curPos):
+    if str[curPos] != '\\':
+        return __DetectedKeyword.NotDetected
+    return __CheckKeyword(str, curPos + 1)
 
 
 def __SkipSpaces(str, curPos):
@@ -39,15 +69,58 @@ def __GetNumber(str, pos):
 
 
 def __GetName(str, pos):
+    modCount = 0
+    labels = set()
+    color = NameToken.Colors.NoColor
+
+    while not str[pos].isalpha():
+        detection = __CheckKeyword(str, pos + 1)
+        if __DetectedKeyword.NotDetected == detection:
+            raise SyntaxError("Failed to recognize escape sequence")
+        elif __DetectedKeyword.Italics == detection:
+            pos += 1 + len(__ITALICS_KEYWORD)
+            labels.add(NameToken.Label.Italics)
+        elif __DetectedKeyword.Bold == detection:
+            pos += 1 + len(__BOLD_KEYWORD)
+            labels.add(NameToken.Label.Bold)
+        elif __DetectedKeyword.Underline == detection:
+            pos += 1 + len(__UNDERLINE_KEYWORD)
+            labels.add(NameToken.Label.Underline)
+        elif __DetectedKeyword.Color == detection:
+            if NameToken.Colors.NoColor != color:
+                raise SyntaxError("Only one color can be applied")
+            pos += 1 + len(__COLOR_KEYWORD)
+            if pos == len(str) or '[' != str[pos]:
+                raise SyntaxError("Failed to find '[' in color modifier")
+            pos += 1
+            closePos = str.find(']', pos)
+            if -1 == closePos:
+                raise SyntaxError("Failed to find ']' in color modifier")
+            selectingColor = [e for e in NameToken.Colors if e.name.lower() == str[pos:closePos]]
+            if 0 == len(selectingColor):
+                raise SyntaxError("Failed to recognize color")
+            color = selectingColor[0]
+            pos = closePos + 1
+        if pos == len(str) or '{' != str[pos]:
+            raise SyntaxError("Failed to find '{' in color modifier")
+        pos += 1
+        modCount += 1
+
     for seqEnd in range(pos, len(str)):
         if not (str[seqEnd].isalpha() or str[seqEnd].isdigit()):
-            return seqEnd, NameToken(str[pos:seqEnd], [], NameToken.Colors.NoColor)
-    return len(str), NameToken(str[pos:], [], NameToken.Colors.NoColor)
+            if -1 == str.find('}' * modCount, seqEnd, seqEnd + modCount):
+                raise SyntaxError("Not enough '}' in modificators")
+            return seqEnd + modCount, NameToken(str[pos:seqEnd], list(labels), color)
+
+    if 0 != modCount:
+        raise SyntaxError("Not enough '}' in modificators")
+    return len(str), NameToken(str[pos:], list(labels), color)
 
 
 def __GetOperationsSequence(str, pos):
     for seqEnd in range(pos, len(str)):
-        if str[seqEnd].isalpha() or str[seqEnd].isdigit() or str[seqEnd] == '.':
+        if (str[seqEnd].isalpha() or str[seqEnd].isdigit() or str[seqEnd] == '.'
+            or __DetectedKeyword.NotDetected != __CheckEscapeSequence(str, seqEnd)):
             return seqEnd, OperationsToken(str[pos:seqEnd])
     return len(str), OperationsToken(str[pos:])
 
@@ -62,7 +135,7 @@ def __TokenizeLine(line):
         token = None
         if line[i].isdigit() or '.' == line[i]:
             i, token = __GetNumber(line, i)
-        elif line[i].isalpha():
+        elif line[i].isalpha() or __DetectedKeyword.NotDetected != __CheckEscapeSequence(line, i):
             i, token = __GetName(line, i)
         else:
             i, token = __GetOperationsSequence(line, i)
