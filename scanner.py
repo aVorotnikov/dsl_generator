@@ -119,7 +119,8 @@ def __GetName(str, pos):
 
 def __GetOperationsSequence(str, pos):
     for seqEnd in range(pos, len(str)):
-        if (str[seqEnd].isalpha() or str[seqEnd].isdigit() or str[seqEnd] == '.'
+        if (str[seqEnd].isalpha() or str[seqEnd].isdigit()
+            or ('.' == str[seqEnd] and len(str) != seqEnd + 1 and str[seqEnd + 1].isdigit())
             or __DetectedKeyword.NotDetected != __CheckEscapeSequence(str, seqEnd)):
             return seqEnd, OperationsToken(str[pos:seqEnd])
     return len(str), OperationsToken(str[pos:])
@@ -133,7 +134,7 @@ def __TokenizeLine(line):
         if i == len(line):
             break
         token = None
-        if line[i].isdigit() or '.' == line[i]:
+        if line[i].isdigit() or ('.' == line[i] and len(line) != i + 1 and line[i + 1].isdigit()):
             i, token = __GetNumber(line, i)
         elif line[i].isalpha() or __DetectedKeyword.NotDetected != __CheckEscapeSequence(line, i):
             i, token = __GetName(line, i)
