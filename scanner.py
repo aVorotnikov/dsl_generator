@@ -126,6 +126,14 @@ def __GetOperationsSequence(str, pos):
     return len(str), OperationsToken(str[pos:])
 
 
+def __GetString(str, pos):
+    openSymbol = str[pos]
+    for seqEnd in range(pos + 1, len(str)):
+        if str[seqEnd] == openSymbol and '\\' != str[seqEnd - 1]:
+            return seqEnd + 1, OperationsToken(str[pos+1:seqEnd])
+    raise SyntaxError("Failed to find end of string")
+
+
 def __TokenizeLine(line):
     i = 0
     tokens = []
@@ -138,6 +146,8 @@ def __TokenizeLine(line):
             i, token = __GetNumber(line, i)
         elif line[i].isalpha() or __DetectedKeyword.NotDetected != __CheckEscapeSequence(line, i):
             i, token = __GetName(line, i)
+        elif line[i] == '"' or line[i] == '\'':
+            i, token = __GetString(line, i)
         else:
             i, token = __GetOperationsSequence(line, i)
         tokens.append(token)
@@ -167,3 +177,5 @@ if __name__ == "__main__":
             print(f"Name: {token.name}. Labels: {token.labels}. Color: {token.color}")
         elif Token.Type.OPERATIONS_SEQ == token.type:
             print(f"Operations sequence: {token.sequence}")
+        elif Token.Type.STRING == token.type:
+            print(f"String sequence: {token.str}")

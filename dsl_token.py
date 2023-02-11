@@ -8,6 +8,7 @@ class Token:
         FLOAT = 2
         NAME = 3
         OPERATIONS_SEQ = 4
+        STRING = 5
 
 
     def __init__(self, type):
@@ -57,6 +58,12 @@ class NameToken(Token):
         self.name = name
         self.labels = labels
         self.color = color
+
+
+class StringToken(Token):
+    def __init__(self, str):
+        super().__init__(Token.Type.STRING)
+        self.str = str
 
 
 class OperationsToken(Token):
