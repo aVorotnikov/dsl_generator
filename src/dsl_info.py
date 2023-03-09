@@ -15,9 +15,9 @@ tokenRegularExpressions = [
 
 
 keys = [
-    ("Terminal", Terminal.name),
+    ("TERMINALS", Terminal.name),
     ("KEYS", Terminal.name),
-    ("NONTerminal", Terminal.name),
+    ("NONTERMINALS", Terminal.name),
     ("AXIOM", Terminal.name),
     ("RULES", Terminal.name),
     ("ERRORS", Terminal.name),
