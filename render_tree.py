@@ -19,4 +19,4 @@ h.edge('D', 'F')
 h.edge('D', 'end')
 h.edge('F', 'end')
 
-h.render(directory="graphiz_data", view=True)
+h.render(directory="_graphiz_data", view=True)

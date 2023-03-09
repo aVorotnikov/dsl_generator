@@ -132,4 +132,4 @@ dmypy.json
 .vscode
 
 # Graphiz images directory
-graphiz_data
+_graphiz_data
