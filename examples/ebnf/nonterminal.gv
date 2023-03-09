@@ -1,0 +1,9 @@
+digraph NONTERMINAL {
+    start [label=NONTERMINAL shape=plaintext]
+    A [label=name shape=box]
+    B [label=char_sequence shape=box]
+    start -> A
+    start -> B
+    A -> end
+    B -> end
+}

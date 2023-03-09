@@ -1,0 +1,16 @@
+digraph RULES_BLOCK {
+    start [label=RULES_BLOCK shape=plaintext]
+    A [label=RULES shape=oval]
+    B [label=":" shape=oval]
+    C [label=RULE shape=box]
+    D [label=";" shape=oval]
+    E [label="." shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> D
+    C -> E
+    D -> C
+    E -> end
+}

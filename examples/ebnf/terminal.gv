@@ -1,0 +1,6 @@
+digraph TERMINAL {
+    start [label=TERMINAL shape=plaintext]
+    A [label=name shape=box]
+    start -> A
+    A -> end
+}
