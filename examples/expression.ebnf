@@ -1,0 +1,18 @@
+TERMINALS:
+    number ::= '[1-9]\d*';
+    operation ::= '[\+\*]';
+    terminator ::= ';'.
+
+KEYS: '+'; '*'; ','.
+
+NONTERMINALS:
+    EXPRESSIONS;
+    EXPRESSION;
+    MULLER.
+
+AXIOM: EXPRESSIONS.
+
+RULES:
+    EXPRESSIONS ::= {EXPRESSION # ,};
+    EXPRESSION ::= {MULLER # +};
+    MULLER ::= {number # *}.
