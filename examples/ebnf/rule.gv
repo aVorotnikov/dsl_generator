@@ -1,0 +1,11 @@
+digraph RULE {
+    start [label=RULE shape=plaintext]
+    A [label=TERMINAL shape=box]
+    B [label="::=" shape=oval]
+    C [label=RHS shape=box]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> end
+}
