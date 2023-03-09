@@ -8,8 +8,8 @@ class Terminal(Enum):
 
 
 tokenRegularExpressions = [
-    (Terminal.name, r"[\w\D][\w]*"),
-    (Terminal.char_sequence, r"[\W\S^']+"),
+    (Terminal.name, r"[\w^\d][\w]*"),
+    (Terminal.char_sequence, r"[^'\w\s]+"),
     (Terminal.string, r"'(\\.|[^\\']+)*'")
 ]
 
