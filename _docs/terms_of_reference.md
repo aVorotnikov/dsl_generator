@@ -8,8 +8,42 @@
 
 Реализовать возможность задавать семантику в форме:
 * Разбора AST на языке программирования общего назначения
-* Автоматного объекта
-* В виде исполняемого кода, написанного в диаграмме Вирта
+* Автоматного объекта на языке CIAO - ориентиром служит реализация в магистреской Орищенко
+* В виде исполняемого кода, написанного в диаграмме Вирта - упрощенная Р-технология Вельбицкого
+
+Пример реализации счётного триггера на CIAO:
+```
+FlipFlop
+
+VAR
+button := false
+
+REQUIRED
+isItLightOutside()
+turnOnLamp()
+turnOffLamp()
+
+PROVIDED
+buttonPress(mode)
+isButtonPressed()
+
+INNER
+printInfo(text)
+
+STATE
+entry -> / -> ready
+ready -> button / -> check
+check -> isItLightOutside() / -> error
+check -> else / turnOnLamp() -> wait
+wait -> !button / turnOffLamp() -> ready
+error -> / printInfo("It is light outside") -> exit
+```
+
+Пример разбора десятичной записи целого числа при помощи Р-технологии:
+
+![Пример разбора десятичной записи целого числа](diagrams/r_technology_sample.png)
+
+[Код диаграммы на языке dot](raw_diagrams/r_technology_sample.gv)
 
 ## Программа и методика испытаний
 1. РБНФ как DSL\

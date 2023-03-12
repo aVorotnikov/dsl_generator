@@ -1,0 +1,11 @@
+digraph NUMBER {
+    start [label=NUMBER shape=plaintext]
+    A [label="1..9" shape=oval]
+    B [label="0..9" shape=oval]
+    end [label="" shape=point]
+    start -> A [label="N=0"]
+    A -> B [label="N=n"]
+    B -> B [label="N=10*N + n"]
+    A -> end [label="N=n"]
+    B -> end [label="N=10*N + n"]
+}
