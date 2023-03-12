@@ -4,7 +4,7 @@ import graphviz
 import os
 
 
-parser = argparse.ArgumentParser(description='Create svg images of dot diagrams. Need installed graphiz.')
+parser = argparse.ArgumentParser(description='Create images of dot diagrams. Need installed graphviz.')
 parser.add_argument('-s', '--src', dest="src", type=pathlib.Path, help='Directory with .gv files to render', required=True)
 parser.add_argument('-d', '--dst', dest="dst", type=pathlib.Path, help='Directory to render images', required=True)
 parser.add_argument('-f', '--format', dest="format", type=str, help='Image format for dot', default="png")
