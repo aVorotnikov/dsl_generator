@@ -133,3 +133,6 @@ dmypy.json
 
 # Graphiz images directory
 _graphiz_data
+
+# Debug info
+_debug
