@@ -32,7 +32,6 @@ tokenList = Afterscan(tokenList)
 
 if debugInfoDir is not None:
     h = graphviz.Digraph('token_stream', format='svg')
-
     h.node('0', '', shape='point')
     i = 1
     for token in tokenList:
