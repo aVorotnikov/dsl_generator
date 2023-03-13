@@ -13,6 +13,6 @@ NONTERMINALS:
 AXIOM: EXPRESSIONS.
 
 RULES:
-    EXPRESSIONS ::= {EXPRESSION # ,};
-    EXPRESSION ::= {MULLER # +};
-    MULLER ::= {number # *}.
+    EXPRESSIONS ::= { EXPRESSION # , };
+    EXPRESSION ::= { MULLER # + };
+    MULLER ::= { number # * }.

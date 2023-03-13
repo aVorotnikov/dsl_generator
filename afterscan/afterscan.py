@@ -1,16 +1,71 @@
-from afterscan.utils import *
+import dsl_info
+from dsl_token import *
 
 
-__OPERATION_LIST = ['+']
+def __ReplaceOneToken(tokenList, converter):
+    res = []
+    for token in tokenList:
+        res += converter(token)
+    return res
 
 
-def __Replacer(token):
-    if Token.Type.NAME == token.type:
-        return [ConvertNameTokenToKeyword(token)]
-    if Token.Type.OPERATIONS_SEQ == token.type:
-        return SplitOperations(token, __OPERATION_LIST)
+def __SplitTokens(splitTerminalMap, token):
+    def __CheckString(str, prefix):
+        return -1 != str.find(prefix, 0, len(prefix))
+
+    if token.type != Token.Type.TERMINAL:
+        return [token]
+    if token.terminalType not in splitTerminalMap:
+        return [token]
+    keys = splitTerminalMap[token.terminalType]
+    residualStr = token.str
+    result = []
+    while len(residualStr) > 1:
+        findKey = False
+        for key in keys:
+            if __CheckString(residualStr, key):
+                newToken = Token(Token.Type.TERMINAL)
+                newToken.terminalType = token.terminalType
+                newToken.str = key
+                result.append(newToken)
+                residualStr = residualStr[len(key):]
+                findKey = True
+                break
+        if not findKey:
+            break
+    if 0 != len(residualStr):
+        newToken = Token(Token.Type.TERMINAL)
+        newToken.terminalType = token.terminalType
+        newToken.str = residualStr
+        result.append(newToken)
+    return result
+
+
+def __ReplaceKeywords(terminalMap, token):
+    if token.type != Token.Type.TERMINAL:
+        return [token]
+    if token.terminalType not in terminalMap:
+        return [token]
+    if token.str not in terminalMap[token.terminalType]:
+        return [token]
+    token.type = Token.Type.KEY
     return [token]
 
 
 def Afterscan(tokenList):
-    return ReplaceOneToken(tokenList, __Replacer)
+    terminalMap = dict()
+    for keyInfo in dsl_info.keys:
+        if keyInfo[1] not in terminalMap:
+            terminalMap[keyInfo[1]] = [keyInfo[0]]
+        else:
+            terminalMap[keyInfo[1]].append(keyInfo[0])
+
+    terminalTypesToSplit = [dsl_info.Terminal.char_sequence]
+    splitTerminalMap = dict()
+    for terminal, keys in terminalMap.items():
+        if terminal in terminalTypesToSplit:
+            splitTerminalMap[terminal] = keys
+            splitTerminalMap[terminal].sort(reverse=True, key=lambda k: len(k))
+
+    tmp = __ReplaceOneToken(tokenList, lambda token: __SplitTokens(splitTerminalMap, token))
+    return __ReplaceOneToken(tmp, lambda token: __ReplaceKeywords(terminalMap, token))
