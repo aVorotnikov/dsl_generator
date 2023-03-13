@@ -13,6 +13,8 @@ def __SplitTokens(splitTerminalMap, token):
     def __CheckString(str, prefix):
         return -1 != str.find(prefix, 0, len(prefix))
 
+    if token.type != Token.Type.TERMINAL:
+        return [token]
     if token.terminalType not in splitTerminalMap:
         return [token]
     keys = splitTerminalMap[token.terminalType]
@@ -22,7 +24,8 @@ def __SplitTokens(splitTerminalMap, token):
         findKey = False
         for key in keys:
             if __CheckString(residualStr, key):
-                newToken = Token(Token.Type.KEY)
+                newToken = Token(Token.Type.TERMINAL)
+                newToken.terminalType = token.terminalType
                 newToken.str = key
                 result.append(newToken)
                 residualStr = residualStr[len(key):]
