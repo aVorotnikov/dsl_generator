@@ -3,7 +3,7 @@ digraph ERROR_BLOCK {
     A [label=ERRORS shape=oval]
     B [label=":" shape=oval]
     C [label=NONTERMINAL shape=box]
-    D [label=string shape=box]
+    D [label=string shape=diamond]
     E [label="|" shape=oval]
     F [label=";" shape=oval]
     G [label="." shape=oval]

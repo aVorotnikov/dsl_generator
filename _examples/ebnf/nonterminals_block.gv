@@ -2,7 +2,7 @@ digraph NONTERMINALS_BLOCK {
     start [label=NONTERMINALS_BLOCK shape=plaintext]
     A [label=NONTERMINALS shape=oval]
     B [label=":" shape=oval]
-    C [label=name shape=box]
+    C [label=name shape=diamond]
     D [label=";" shape=oval]
     E [label="." shape=oval]
     end [label="" shape=point]

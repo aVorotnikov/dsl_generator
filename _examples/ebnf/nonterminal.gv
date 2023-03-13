@@ -1,7 +1,7 @@
 digraph NONTERMINAL {
     start [label=NONTERMINAL shape=plaintext]
-    A [label=name shape=box]
-    B [label=char_sequence shape=box]
+    A [label=name shape=diamond]
+    B [label=char_sequence shape=diamond]
     start -> A
     start -> B
     A -> end

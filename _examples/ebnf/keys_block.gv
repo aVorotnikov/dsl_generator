@@ -2,7 +2,7 @@ digraph KEYS_BLOCK {
     start [label=KEYS_BLOCK shape=plaintext]
     A [label=KEYS shape=oval]
     B [label=":" shape=oval]
-    C [label=string shape=box]
+    C [label=string shape=diamond]
     D [label=";" shape=oval]
     E [label="." shape=oval]
     end [label="" shape=point]
