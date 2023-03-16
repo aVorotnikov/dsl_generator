@@ -2,8 +2,8 @@
     "syntax": {
         "type": "virt",
         "info": {
-            "supportInfo": "_examples/ebnf/ebnf.sgi",
-            "diagrams": "_examples/ebnf"
+            "supportInfo": "_examples/rbnf/rbnf.sgi",
+            "diagrams": "_examples/rbnf"
         }
     },
     "debugInfoDir": "_debug"
