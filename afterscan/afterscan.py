@@ -52,6 +52,14 @@ def __ReplaceKeywords(terminalMap, token):
     return [token]
 
 
+def __StringProcessing(token):
+    if token.type != Token.Type.TERMINAL or token.terminalType != dsl_info.Terminal.string:
+        return[token]
+    token.str = token.str[1:-1]
+    token.str.replace("\\'", "'")
+    return [token]
+
+
 def Afterscan(tokenList):
     terminalMap = dict()
     for keyInfo in dsl_info.keys:
@@ -68,4 +76,5 @@ def Afterscan(tokenList):
             splitTerminalMap[terminal].sort(reverse=True, key=lambda k: len(k))
 
     tmp = __ReplaceOneToken(tokenList, lambda token: __SplitTokens(splitTerminalMap, token))
-    return __ReplaceOneToken(tmp, lambda token: __ReplaceKeywords(terminalMap, token))
+    tmp = __ReplaceOneToken(tmp, lambda token: __ReplaceKeywords(terminalMap, token))
+    return __ReplaceOneToken(tmp, __StringProcessing)
