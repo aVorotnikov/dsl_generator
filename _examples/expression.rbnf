@@ -8,11 +8,11 @@ KEYS: '+'; '*'; ','.
 NONTERMINALS:
     EXPRESSIONS;
     EXPRESSION;
-    MULLER.
+    TERM.
 
 AXIOM: EXPRESSIONS.
 
 RULES:
     EXPRESSIONS ::= { EXPRESSION # , };
-    EXPRESSION ::= { MULLER # + };
-    MULLER ::= { number # * }.
+    EXPRESSION ::= { TERM # + };
+    TERM ::= { number # * }.
