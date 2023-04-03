@@ -1,7 +1,0 @@
-digraph TERMINAL {
-    start [label=TERMINAL shape=plaintext]
-    A [label=name shape=diamond]
-    end [shape=point]
-    start -> A
-    A -> end
-}
