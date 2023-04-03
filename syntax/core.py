@@ -15,7 +15,7 @@ class NodeType(Enum):
 
 
 class Node:
-    def __init__(self, type, str, nextNodes = []):
+    def __init__(self, type, str):
         self.type = type
         self.str = str
-        self.nextNodes = nextNodes
+        self.nextNodes = []
