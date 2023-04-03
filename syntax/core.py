@@ -9,8 +9,8 @@ class SyntaxDescriptionType(Enum):
 class NodeType(Enum):
     TERMINAL = 0
     KEY = 1
-    NONTERMINAL = 2,
-    START = 3,
+    NONTERMINAL = 2
+    START = 3
     END = 4
 
 
