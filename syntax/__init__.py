@@ -1,5 +1,6 @@
 from syntax.core import *
 import syntax.virt
+from syntax.build_ast import *
 
 
 def GetSyntaxDesription(syntaxParameters):

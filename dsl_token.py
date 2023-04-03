@@ -4,7 +4,7 @@ from enum import Enum
 
 class Token:
     class Type(Enum):
-        TERMINAL = 0,
+        TERMINAL = 0
         KEY = 1
 
 

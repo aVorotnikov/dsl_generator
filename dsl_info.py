@@ -2,8 +2,8 @@ from enum import Enum
 
 
 class Terminal(Enum):
-    name = "name",
-    char_sequence = "char_sequence",
+    name = "name"
+    char_sequence = "char_sequence"
     string = "string"
 
 
@@ -37,16 +37,16 @@ keys = [
 
 
 class Nonterminal(Enum):
-    GRAMMAR = 'GRAMMAR',
-    TERMINALS_BLOCK = 'TERMINALS_BLOCK',
-    KEYS_BLOCK = 'KEYS_BLOCK',
-    NONTERMINALS_BLOCK = 'NONTERMINALS_BLOCK',
-    AXIOM_BLOCK = 'AXIOM_BLOCK',
-    ERROR_BLOCK = 'ERROR_BLOCK',
-    RULES_BLOCK = 'RULES_BLOCK',
-    RULE = 'RULE',
-    RHS = 'RHS',
-    NONTERMINAL = 'NONTERMINAL',
+    GRAMMAR = 'GRAMMAR'
+    TERMINALS_BLOCK = 'TERMINALS_BLOCK'
+    KEYS_BLOCK = 'KEYS_BLOCK'
+    NONTERMINALS_BLOCK = 'NONTERMINALS_BLOCK'
+    AXIOM_BLOCK = 'AXIOM_BLOCK'
+    ERROR_BLOCK = 'ERROR_BLOCK'
+    RULES_BLOCK = 'RULES_BLOCK'
+    RULE = 'RULE'
+    RHS = 'RHS'
+    NONTERMINAL = 'NONTERMINAL'
     TERMINAL = 'TERMINAL'
 
 

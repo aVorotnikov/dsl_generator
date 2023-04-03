@@ -1,6 +1,6 @@
 digraph RULE {
     start [label=RULE shape=plaintext]
-    A [label=TERMINAL shape=box]
+    A [label=name shape=diamond]
     B [label="::=" shape=oval]
     C [label=RHS shape=box]
     end [label="" shape=point]

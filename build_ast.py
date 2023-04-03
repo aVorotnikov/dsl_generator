@@ -2,6 +2,7 @@ from scanner import Tokenize
 from afterscan import Afterscan
 from dsl_token import *
 from syntax import *
+import dsl_info
 
 import graphviz
 from argparse import ArgumentParser
@@ -25,6 +26,31 @@ def __RenderTokenStream(diagramName, tokenList, debugInfoDir):
         i += 1
     h.node(str(i), '', shape='point')
     h.edge(str(i - 1), str(i))
+    h.render(directory=debugInfoDir, view=True)
+
+
+def __RenderAst(diagramName, ast, debugInfoDir):
+    if debugInfoDir is None:
+        return
+    h = graphviz.Digraph(diagramName, format='svg')
+    i = 1
+    nodes = [(ast, 0)]
+    while len(nodes):
+        node = nodes[0]
+        if TreeNode.Type.NONTERMINAL == node[0].type:
+            h.node(str(i), f"NONTERMINAL\ntype: {node[0].nonterminalType}", shape='box')
+            if node[1] != 0:
+                h.edge(str(node[1]), str(i))
+            nodes += [(child, i) for child in node[0].childs]
+        else:
+            token = node[0].token
+            if Token.Type.TERMINAL == token.type:
+                h.node(str(i), f"TERMINAL\ntype: {token.terminalType.name}\nstring: {token.str}", shape='diamond')
+            elif Token.Type.KEY == token.type:
+                h.node(str(i), f"KEY\nstring: {token.str}", shape='oval')
+            h.edge(str(node[1]), str(i))
+        nodes = nodes[1:]
+        i += 1
     h.render(directory=debugInfoDir, view=True)
 
 
@@ -52,3 +78,6 @@ tokenList = Tokenize(code)
 __RenderTokenStream('token_stream_after_scanner', tokenList, debugInfoDir)
 tokenList = Afterscan(tokenList)
 __RenderTokenStream('token_stream_after_afterscan', tokenList, debugInfoDir)
+
+ast = BuildAst(syntaxInfo, dsl_info.axiom, tokenList)
+__RenderAst('ast', ast, debugInfoDir)
