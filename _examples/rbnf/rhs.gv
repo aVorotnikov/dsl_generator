@@ -1,7 +1,7 @@
 digraph RHS {
     start [label=RHS shape=plaintext]
-    A [label=TERMINAL shape=box]
-    B [label=NONTERMINAL shape=box]
+    A [label=name shape=diamond]
+    B [label=char_sequence shape=diamond]
     C [label="(" shape=oval]
     D [label=RHS shape=box]
     E [label=")" shape=oval]
