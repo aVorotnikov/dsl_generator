@@ -1,0 +1,10 @@
+{
+    "syntax": {
+        "type": "virt",
+        "info": {
+            "supportInfo": "_examples/expression/rbnf.sgi",
+            "diagrams": "_examples/expression"
+        }
+    },
+    "debugInfoDir": "_debug"
+}

@@ -1,0 +1,10 @@
+digraph TERM {
+    start [label=TERM shape=plaintext]
+    A [label=number shape=diamond]
+    B [label="*" shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> A
+    A -> end
+}
