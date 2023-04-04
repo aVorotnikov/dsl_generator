@@ -1,0 +1,10 @@
+digraph EXPRESSION {
+    start [label=EXPRESSION shape=plaintext]
+    A [label=TERM shape=box]
+    B [label="+" shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> A
+    A -> end
+}

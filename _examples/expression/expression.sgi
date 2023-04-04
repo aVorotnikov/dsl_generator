@@ -11,8 +11,3 @@ NONTERMINALS:
     TERM.
 
 AXIOM: EXPRESSIONS.
-
-RULES:
-    EXPRESSIONS ::= { EXPRESSION # , };
-    EXPRESSION ::= { TERM # + };
-    TERM ::= { number # * }.
