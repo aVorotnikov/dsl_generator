@@ -46,8 +46,6 @@ class Nonterminal(Enum):
     RULES_BLOCK = 'RULES_BLOCK'
     RULE = 'RULE'
     RHS = 'RHS'
-    NONTERMINAL = 'NONTERMINAL'
-    TERMINAL = 'TERMINAL'
 
 
 axiom = Nonterminal.GRAMMAR
