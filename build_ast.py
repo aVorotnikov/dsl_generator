@@ -3,6 +3,8 @@ from afterscan import Afterscan
 from dsl_token import *
 from syntax import *
 import dsl_info
+import attributor
+import attribute_evaluator
 
 import graphviz
 from argparse import ArgumentParser
@@ -87,3 +89,5 @@ __RenderTokenStream('token_stream_after_afterscan', tokenList, debugInfoDir)
 
 ast = BuildAst(syntaxInfo, dsl_info.axiom, tokenList)
 __RenderAst('ast', ast, debugInfoDir)
+attributor.SetAttributes(ast, attribute_evaluator.attributesMap)
+__RenderAst('ast_attributed', ast, debugInfoDir)

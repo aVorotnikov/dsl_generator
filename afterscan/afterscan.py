@@ -77,4 +77,12 @@ def Afterscan(tokenList):
 
     tmp = __ReplaceOneToken(tokenList, lambda token: __SplitTokens(splitTerminalMap, token))
     tmp = __ReplaceOneToken(tmp, lambda token: __ReplaceKeywords(terminalMap, token))
-    return __ReplaceOneToken(tmp, __StringProcessing)
+    tmp = __ReplaceOneToken(tmp, __StringProcessing)
+
+    for token in tmp:
+        if token.type != Token.Type.TERMINAL:
+            continue
+        if dsl_info.Terminal.name == token.terminalType or dsl_info.Terminal.string == token.terminalType:
+            token.attribute = token.str
+
+    return tmp

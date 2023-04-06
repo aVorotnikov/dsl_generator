@@ -31,6 +31,7 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
                 continue
             if NodeType.KEY == next[0].type and Token.Type.KEY == newToken.type and newToken.str == next[0].str:
                 element = TreeNode(TreeNode.Type.TOKEN)
+                element.attribute = newToken.attribute
                 element.token = newToken
                 result.childs.append(element)
                 result.commands.append(next[1])
@@ -40,6 +41,7 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
                 break
             if NodeType.TERMINAL == next[0].type and Token.Type.TERMINAL == newToken.type and newToken.terminalType == next[0].terminal:
                 element = TreeNode(TreeNode.Type.TOKEN)
+                element.attribute = newToken.attribute
                 element.token = newToken
                 result.childs.append(element)
                 result.commands.append(next[1])
