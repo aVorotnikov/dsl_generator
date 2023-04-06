@@ -4,6 +4,7 @@ from dsl_info import *
 def __RemoveNones(attributes):
     return [attribute for attribute in attributes if attribute]
 
+
 def __CreatePairs(attributes):
     attributes = __RemoveNones(attributes)
     if len(attributes) % 2 != 0:
