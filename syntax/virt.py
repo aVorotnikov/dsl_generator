@@ -42,9 +42,13 @@ def GetSyntaxDesription(diagramsDir, sgiFilePath):
                 str = str[1:-1]
             node = Node(nodeType, str)
             virtNodes[dotNode.get_name()] = node
-            if NodeType.START == nodeType:
+            if NodeType.NONTERMINAL == nodeType:
+                node.nonterminal = Nonterminal(str)
+            elif NodeType.TERMINAL == nodeType:
+                node.terminal = Terminal(str)
+            elif NodeType.START == nodeType:
                 startArray.append(node)
-            if NodeType.END == nodeType:
+            elif NodeType.END == nodeType:
                 endArray.append(node)
         if len(startArray) != 1:
             raise Exception(f"Incorrect number of starts")
@@ -59,6 +63,6 @@ def GetSyntaxDesription(diagramsDir, sgiFilePath):
                     edge[1] = edge[1][1:-1]
                 node.nextNodes.append((virtNodes[edge[0]], edge[1]))
 
-        res[diagram.get_name()] = startArray[0]
+        res[Nonterminal[diagram.get_name()]] = startArray[0]
 
     return res

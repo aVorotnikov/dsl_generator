@@ -37,7 +37,7 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
                 node = next[0]
                 success = True
                 break
-            if NodeType.TERMINAL == next[0].type and Token.Type.TERMINAL == newToken.type and newToken.terminalType.value == next[0].str:
+            if NodeType.TERMINAL == next[0].type and Token.Type.TERMINAL == newToken.type and newToken.terminalType == next[0].terminal:
                 element = TreeNode(TreeNode.Type.TOKEN)
                 element.token = newToken
                 result.childs.append(element)
@@ -48,7 +48,7 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
                 break
             if NodeType.NONTERMINAL == next[0].type:
                 try:
-                    res = __BuildAstElement(grammarDescription, next[0].str, tokenList, start, end)
+                    res = __BuildAstElement(grammarDescription, next[0].nonterminal, tokenList, start, end)
                     start = res[1]
                     end = res[2]
                     result.childs.append(res[0])
@@ -69,4 +69,4 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
 
 
 def BuildAst(grammarDescription, axiom, tokenList):
-    return __BuildAstElement(grammarDescription, axiom.value, tokenList, 0, len(tokenList))[0]
+    return __BuildAstElement(grammarDescription, axiom, tokenList, 0, len(tokenList))[0]
