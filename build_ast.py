@@ -19,9 +19,11 @@ def __RenderTokenStream(diagramName, tokenList, debugInfoDir):
     i = 1
     for token in tokenList:
         if Token.Type.TERMINAL == token.type:
-            h.node(str(i), f"TERMINAL\ntype: {token.terminalType.name}\nstring: {token.str}", shape='diamond')
+            h.node(str(i),
+                   f"TERMINAL\ntype: {token.terminalType.name}\nstring: {token.str}" + (f"\nattribute: {token.attribute}" if token.attribute else ""),
+                   shape='diamond')
         elif Token.Type.KEY == token.type:
-            h.node(str(i), f"KEY\nstring: {token.str}", shape='oval')
+            h.node(str(i), f"KEY\nstring: {token.str}" + (f"\nattribute: {token.attribute}" if token.attribute else ""), shape='oval')
         h.edge(str(i - 1), str(i))
         i += 1
     h.node(str(i), '', shape='point')
@@ -38,16 +40,20 @@ def __RenderAst(diagramName, ast, debugInfoDir):
     while len(nodes):
         node = nodes[0]
         if TreeNode.Type.NONTERMINAL == node[0].type:
-            h.node(str(i), f"NONTERMINAL\ntype: {node[0].nonterminalType}", shape='box')
+            h.node(str(i),
+                   f"NONTERMINAL\ntype: {node[0].nonterminalType}" + (f"\nattribute: {node[0].attribute}" if node[0].attribute else ""),
+                   shape='box')
             if node[1] != 0:
                 h.edge(str(node[1]), str(i))
             nodes += [(child, i) for child in node[0].childs]
         else:
             token = node[0].token
             if Token.Type.TERMINAL == token.type:
-                h.node(str(i), f"TERMINAL\ntype: {token.terminalType.name}\nstring: {token.str}", shape='diamond')
+                h.node(str(i),
+                       f"TERMINAL\ntype: {token.terminalType.name}\nstring: {token.str}" + (f"\nattribute: {token.attribute}" if token.attribute else ""),
+                       shape='diamond')
             elif Token.Type.KEY == token.type:
-                h.node(str(i), f"KEY\nstring: {token.str}", shape='oval')
+                h.node(str(i), f"KEY\nstring: {token.str}" + (f"\nattribute: {token.attribute}" if token.attribute else ""), shape='oval')
             h.edge(str(node[1]), str(i))
         nodes = nodes[1:]
         i += 1
