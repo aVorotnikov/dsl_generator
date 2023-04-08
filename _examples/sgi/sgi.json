@@ -1,0 +1,10 @@
+{
+    "syntax": {
+        "type": "virt",
+        "info": {
+            "supportInfo": "_examples/sgi/sgi.sgi",
+            "diagrams": "_examples/sgi"
+        }
+    },
+    "debugInfoDir": "_debug"
+}

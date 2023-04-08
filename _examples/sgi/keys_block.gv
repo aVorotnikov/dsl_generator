@@ -1,0 +1,16 @@
+digraph KEYS_BLOCK {
+    start [label=KEYS_BLOCK shape=plaintext]
+    A [label=KEYS shape=oval]
+    B [label=":" shape=oval]
+    C [label=string shape=diamond]
+    D [label=";" shape=oval]
+    E [label="." shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> D
+    C -> E
+    D -> C
+    E -> end
+}

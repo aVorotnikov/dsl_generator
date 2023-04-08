@@ -1,0 +1,13 @@
+TERMINALS:
+    number ::= '[1-9]\d*';
+    operation ::= '[\+\*]';
+    terminator ::= ','.
+
+KEYS: '+'; '*'; ','.
+
+NONTERMINALS:
+    EXPRESSIONS;
+    EXPRESSION;
+    TERM.
+
+AXIOM: EXPRESSIONS.
