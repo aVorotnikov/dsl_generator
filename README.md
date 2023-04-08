@@ -16,6 +16,7 @@ pip install -r requirements.txt
 + Примеры:
   + [Текстовые файлы](_examples)
   + [Коды](_example_codes)
+  + [Данные](_example_data)
 + [Утилиты](utils)
 
 Подробнее о каждой части можно узнать в README их директорий.
