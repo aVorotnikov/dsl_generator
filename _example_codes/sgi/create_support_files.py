@@ -106,4 +106,3 @@ with open(dslInfoPath, 'w') as file:
         keys=keysStr,
         nonterminals=nonterminalsStr,
         axiom=axiom))
-
