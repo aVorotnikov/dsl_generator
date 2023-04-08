@@ -1,0 +1,16 @@
+digraph GRAMMAR {
+    start [label=GRAMMAR shape=plaintext]
+    A [label=TERMINALS_BLOCK shape=box]
+    B [label=KEYS_BLOCK shape=box]
+    C [label=NONTERMINALS_BLOCK shape=box]
+    D [label=AXIOM_BLOCK shape=box]
+    E [label=ERROR_BLOCK shape=box]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> D
+    D -> E
+    D -> end
+    E -> end
+}

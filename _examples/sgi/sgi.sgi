@@ -1,0 +1,18 @@
+TERMINALS:
+    name ::= '[\w\D][\w]*';
+    char_sequence ::= '[\W\S^']+';
+    string ::= '\'(\\.|[^\\\']+)*\''.
+
+KEYS:
+    'TERMINALS'; 'KEYS'; 'NONTERMINALS'; 'AXIOM'; 'RULES'; 'ERRORS';
+    '.'; ':'; '::='; ';'.
+
+NONTERMINALS:
+    GRAMMAR;
+    TERMINALS_BLOCK;
+    KEYS_BLOCK;
+    NONTERMINALS_BLOCK;
+    AXIOM_BLOCK;
+    ERROR_BLOCK.
+
+AXIOM: GRAMMAR.

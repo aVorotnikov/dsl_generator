@@ -1,0 +1,21 @@
+digraph ERROR_BLOCK {
+    start [label=ERROR_BLOCK shape=plaintext]
+    A [label=ERRORS shape=oval]
+    B [label=":" shape=oval]
+    C [label=name shape=diamond]
+    D [label=string shape=diamond]
+    E [label="|" shape=oval]
+    F [label=";" shape=oval]
+    G [label="." shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> D
+    D -> G
+    D -> E
+    E -> D
+    D -> F
+    F -> C
+    G -> end
+}

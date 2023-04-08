@@ -1,0 +1,13 @@
+digraph AXIOM_BLOCK {
+    start [label=AXIOM_BLOCK shape=plaintext]
+    A [label=AXIOM shape=oval]
+    B [label=":" shape=oval]
+    C [label=name shape=diamond]
+    D [label="." shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> D
+    D -> end
+}

@@ -1,0 +1,20 @@
+digraph TERMINALS_BLOCK {
+    start [label=TERMINALS_BLOCK shape=plaintext]
+    A [label=TERMINALS shape=oval]
+    B [label=":" shape=oval]
+    C [label=name shape=diamond]
+    D [label="::=" shape=oval]
+    E [label=string shape=diamond]
+    F [label=";" shape=oval]
+    G [label="." shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> D
+    D -> E
+    E -> F
+    F -> C
+    E -> G
+    G -> end
+}
