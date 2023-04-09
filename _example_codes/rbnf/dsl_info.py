@@ -46,6 +46,10 @@ class Nonterminal(Enum):
     RULES_BLOCK = 'RULES_BLOCK'
     RULE = 'RULE'
     RHS = 'RHS'
+    SEQUENCE = 'SEQUENCE'
+    BRACKETS = 'BRACKETS'
+    OPTIONAL = 'OPTIONAL'
+    TSEITIN_ITERATION = 'TSEITIN_ITERATION'
 
 
 axiom = Nonterminal.GRAMMAR

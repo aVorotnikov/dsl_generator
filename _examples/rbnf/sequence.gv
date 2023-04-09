@@ -1,0 +1,14 @@
+digraph SEQUENCE {
+    start [label=SEQUENCE shape=plaintext]
+    A [label=name shape=diamond]
+    B [label=char_sequence shape=diamond]
+    end [label="" shape=point]
+    start -> A
+    start -> B
+    A -> A
+    A -> B
+    B -> A
+    B -> B
+    A -> end
+    B -> end
+}

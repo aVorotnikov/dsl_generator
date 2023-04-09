@@ -1,0 +1,18 @@
+digraph TSEITIN_ITERATION {
+    start [label=TSEITIN_ITERATION shape=plaintext]
+    A [label="{" shape=oval]
+    B [label=RHS shape=box]
+    C [label="#" shape=oval]
+    D [label=RHS shape=box]
+    E [label="}" shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    A -> C
+    A -> E
+    B -> C
+    B -> E
+    C -> D
+    D -> E
+    E -> end
+}
