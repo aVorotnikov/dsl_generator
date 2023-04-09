@@ -5,6 +5,8 @@ from syntax.core import *
 
 
 def __GetType(shape):
+    if shape[0] == '"':
+        shape = shape[1:-1]
     if "plaintext" == shape:
         return NodeType.START
     if "point" == shape:
