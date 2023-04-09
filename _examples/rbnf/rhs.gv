@@ -1,48 +1,31 @@
 digraph RHS {
     start [label=RHS shape=plaintext]
-    A [label=name shape=diamond]
-    B [label=char_sequence shape=diamond]
-    C [label="(" shape=oval]
-    D [label=RHS shape=box]
-    E [label=")" shape=oval]
-    F [label="|" shape=oval]
-    G [label="[" shape=oval]
-    H [label=RHS shape=box]
-    I [label="]" shape=oval]
-    J [label="|" shape=oval]
-    K [label="{" shape=oval]
-    L [label=RHS shape=box]
-    M [label="#" shape=oval]
-    N [label=RHS shape=box]
-    O [label="}" shape=oval]
+    A [label=SEQUENCE shape=box]
+    B [label=BRACKETS shape=box]
+    C [label=OPTIONAL shape=box]
+    D [label=TSEITIN_ITERATION shape=box]
     end [label="" shape=point]
     start -> A
     start -> B
-    A -> A
+    start -> C
+    start -> D
     A -> B
+    A -> C
+    A -> D
     A -> end
     B -> A
     B -> B
+    B -> C
+    B -> D
     B -> end
-    start -> C
+    C -> A
+    C -> B
+    C -> C
     C -> D
-    D -> E
-    D -> F
-    F -> D
-    E -> end
-    start -> G
-    G -> H
-    H -> I
-    H -> J
-    J -> H
-    I -> end
-    start -> K
-    K -> L
-    K -> M
-    K -> O
-    L -> M
-    L -> O
-    M -> N
-    N -> O
-    O -> end
+    C -> end
+    D -> A
+    D -> B
+    D -> C
+    D -> D
+    D -> end
 }
