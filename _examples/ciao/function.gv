@@ -1,0 +1,17 @@
+digraph FUNCTION {
+    start [label=FUNCTION shape=plaintext]
+    A [label=name shape=diamond]
+    B [label="(" shape=oval]
+    C [label=name shape=diamond]
+    D [label="," shape=oval]
+    E [label=")" shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    B -> E
+    C -> D
+    C -> E
+    D -> C
+    E -> end
+}

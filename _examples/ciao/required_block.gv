@@ -1,0 +1,16 @@
+digraph REQUIRED_BLOCK {
+    start [label=REQUIRED_BLOCK shape=plaintext]
+    A [label=REQUIRED shape=oval]
+    B [label=":" shape=oval]
+    C [label=FUNCTION shape=box]
+    G [label=";" shape=oval]
+    H [label="." shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> G
+    C -> H
+    G -> C
+    H -> end
+}

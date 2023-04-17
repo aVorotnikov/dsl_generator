@@ -1,0 +1,24 @@
+digraph VAR_BLOCK {
+    start [label=VAR_BLOCK shape=plaintext]
+    A [label=VAR shape=oval]
+    B [label=":" shape=oval]
+    C [label=name shape=diamond]
+    D [label=":=" shape=oval]
+    E [label=number shape=diamond]
+    F [label=string shape=diamond]
+    G [label=";" shape=oval]
+    H [label="." shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> D
+    D -> E
+    D -> F
+    E -> G
+    E -> H
+    F -> G
+    F -> H
+    G -> C
+    H -> end
+}

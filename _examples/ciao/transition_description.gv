@@ -1,0 +1,24 @@
+digraph TRANSITION_DESCRIPTION {
+    start [label=TRANSITION_DESCRIPTION shape=plaintext]
+    A [label=name shape=diamond]
+    B [label="->" shape=oval]
+    C [label=else shape=oval]
+    D [label=code shape=diamond]
+    E [label="/" shape=oval]
+    F [label=code shape=diamond]
+    G [label="->" shape=oval]
+    H [label=name shape=diamond]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    B -> D
+    B -> E
+    C -> E
+    D -> E
+    E -> F
+    E -> G
+    F -> G
+    G -> H
+    H -> end
+}

@@ -1,0 +1,16 @@
+digraph INNER_BLOCK {
+    start [label=INNER_BLOCK shape=plaintext]
+    A [label=INNER shape=oval]
+    B [label=":" shape=oval]
+    C [label=FUNCTION shape=box]
+    G [label=";" shape=oval]
+    H [label="." shape=oval]
+    end [label="" shape=point]
+    start -> A
+    A -> B
+    B -> C
+    C -> G
+    C -> H
+    G -> C
+    H -> end
+}
