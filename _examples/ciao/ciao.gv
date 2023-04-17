@@ -1,0 +1,8 @@
+digraph CIAO {
+    start [label=CIAO shape=plaintext]
+    A [label=AUTOMATA_OBJECT shape=box]
+    end [label="" shape=point]
+    start -> A
+    A -> A
+    A -> end
+}
