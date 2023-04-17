@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-02-19T19:01:58.327Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.49" etag="nAGuX74XjMcXF2Y90Gzm" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-17T14:02:29.888Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="NzMoxKerZCCcvFjVDTO3" version="21.1.5" type="device">
   <diagram name="Страница 1" id="8D5e6CIdS5LXI-yu4CyA">
-    <mxGraphModel dx="1434" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1050" dy="573" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -25,7 +25,7 @@
         <mxCell id="Anj1RyAsjDltY7r4P9pl-14" value="Запустить программу" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="202" y="400" width="170" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Anj1RyAsjDltY7r4P9pl-15" value="Скомпилировать&lt;br&gt;программу" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+        <mxCell id="Anj1RyAsjDltY7r4P9pl-15" value="Скомпилировать&lt;br&gt;программу" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="202" y="280" width="170" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Anj1RyAsjDltY7r4P9pl-16" value="Получить AST по коду программы" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
@@ -37,11 +37,11 @@
         <mxCell id="Anj1RyAsjDltY7r4P9pl-19" value="&lt;i style=&quot;&quot;&gt;Описать&lt;br&gt;синтаксис языка&lt;/i&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="620" y="360" width="170" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Anj1RyAsjDltY7r4P9pl-20" value="Описать&lt;br&gt;автоматный объект" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="414" y="230" width="170" height="50" as="geometry" />
+        <mxCell id="Anj1RyAsjDltY7r4P9pl-20" value="Задать правила для атрибутов" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="420" y="210" width="170" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Anj1RyAsjDltY7r4P9pl-23" value="Описать&lt;br&gt;грамматику языка" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="414" y="405" width="170" height="50" as="geometry" />
+        <mxCell id="Anj1RyAsjDltY7r4P9pl-23" value="Описать&lt;br&gt;грамматику языка с помощью РБНФ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="414" y="410" width="170" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Anj1RyAsjDltY7r4P9pl-26" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Anj1RyAsjDltY7r4P9pl-3" target="Anj1RyAsjDltY7r4P9pl-16" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -115,43 +115,52 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="wog_7A3qyugUQVRyv6yI-4" value="Нарисовать синтаксические диаграммы Вирта" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
-          <mxGeometry x="414" y="310" width="175" height="60" as="geometry" />
+        <mxCell id="wog_7A3qyugUQVRyv6yI-4" value="Нарисовать синтаксические диаграммы Вирта" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="411.5" y="340" width="175" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="wog_7A3qyugUQVRyv6yI-10" value="" style="endArrow=block;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="wog_7A3qyugUQVRyv6yI-4" target="Anj1RyAsjDltY7r4P9pl-19">
+        <mxCell id="wog_7A3qyugUQVRyv6yI-10" value="" style="endArrow=block;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="wog_7A3qyugUQVRyv6yI-4" target="Anj1RyAsjDltY7r4P9pl-19" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="567.5" y="348" as="sourcePoint" />
             <mxPoint x="659.5" y="400" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wog_7A3qyugUQVRyv6yI-11" value="" style="endArrow=block;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Anj1RyAsjDltY7r4P9pl-23" target="Anj1RyAsjDltY7r4P9pl-19">
+        <mxCell id="wog_7A3qyugUQVRyv6yI-11" value="" style="endArrow=block;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Anj1RyAsjDltY7r4P9pl-23" target="Anj1RyAsjDltY7r4P9pl-19" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="565" y="428" as="sourcePoint" />
             <mxPoint x="610" y="360" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wog_7A3qyugUQVRyv6yI-14" value="Задать семантику на ЯП общего назначения" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
-          <mxGeometry x="413.5" y="170" width="170" height="50" as="geometry" />
+        <mxCell id="wog_7A3qyugUQVRyv6yI-14" value="Задать семантику на ЯП общего назначения" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="416.5" y="150" width="170" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="wog_7A3qyugUQVRyv6yI-15" value="" style="endArrow=block;html=1;rounded=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wog_7A3qyugUQVRyv6yI-14" target="Anj1RyAsjDltY7r4P9pl-18">
+        <mxCell id="wog_7A3qyugUQVRyv6yI-15" value="" style="endArrow=block;html=1;rounded=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="wog_7A3qyugUQVRyv6yI-14" target="Anj1RyAsjDltY7r4P9pl-18" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="560" y="170" as="sourcePoint" />
             <mxPoint x="610" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wog_7A3qyugUQVRyv6yI-16" value="" style="endArrow=block;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Anj1RyAsjDltY7r4P9pl-20" target="Anj1RyAsjDltY7r4P9pl-18">
+        <mxCell id="wog_7A3qyugUQVRyv6yI-16" value="" style="endArrow=block;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Anj1RyAsjDltY7r4P9pl-20" target="Anj1RyAsjDltY7r4P9pl-18" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="565" y="250" as="sourcePoint" />
             <mxPoint x="607.5" y="267" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wog_7A3qyugUQVRyv6yI-17" value="Получить ошибку" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+        <mxCell id="wog_7A3qyugUQVRyv6yI-17" value="Получить ошибку" style="ellipse;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="202" y="340" width="170" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="wog_7A3qyugUQVRyv6yI-18" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Anj1RyAsjDltY7r4P9pl-3" target="wog_7A3qyugUQVRyv6yI-17">
+        <mxCell id="wog_7A3qyugUQVRyv6yI-18" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Anj1RyAsjDltY7r4P9pl-3" target="wog_7A3qyugUQVRyv6yI-17" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="120" y="307" as="sourcePoint" />
             <mxPoint x="212" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TSzH0Voplvb5RTRiOyQG-1" value="Задать код на рёбрах диаграммы Вирта (Р-технология)&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#B3B3B3;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="420" y="275" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TSzH0Voplvb5RTRiOyQG-3" value="" style="endArrow=block;html=1;rounded=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TSzH0Voplvb5RTRiOyQG-1" target="Anj1RyAsjDltY7r4P9pl-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="597" y="185" as="sourcePoint" />
+            <mxPoint x="630" y="235" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
