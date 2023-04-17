@@ -176,7 +176,7 @@ def __AnalyzeSequence(digraph, sequenceNonterminal):
     for element in sequence:
         str = element.token.str
         if str in nonterminals:
-            node = Node(digraph.nodeName.format(digraph.counter), {"label": str})
+            node = Node(digraph.nodeName.format(digraph.counter), {"label": str, "shape": "box"})
         elif str in [terminal[0] for terminal in terminals]:
             node = Node(digraph.nodeName.format(digraph.counter), {"label": str, "shape": "diamond"})
         else:
