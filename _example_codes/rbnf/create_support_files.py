@@ -74,7 +74,7 @@ os.makedirs(os.path.dirname(pathDirectory / aftescanFileName), exist_ok=True)
 shutil.copy(templateDirectory / aftescanTemplateName, pathDirectory / aftescanFileName)
 
 attributes = "\n"
-attributeTemplate = "    # Nonterminal.{} : None\n"
+attributeTemplate = "    # Nonterminal.{} : None,\n"
 for nonterminal in nonterminals:
     attributes += attributeTemplate.format(nonterminal)
 with open(templateDirectory / dslAttrEvaluatorTemplateName, 'r') as templateFile:
