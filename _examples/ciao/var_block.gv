@@ -3,11 +3,13 @@ digraph VAR_BLOCK {
     A [label=VAR shape=oval]
     B [label=":" shape=oval]
     C [label=name shape=diamond]
-    D [label=":=" shape=oval]
+    D [label="=" shape=oval]
     E [label=number shape=diamond]
     F [label=string shape=diamond]
     G [label=";" shape=oval]
     H [label="." shape=oval]
+    I [label="false" shape=oval]
+    J [label="true" shape=oval]
     end [label="" shape=point]
     start -> A
     A -> B
@@ -15,10 +17,16 @@ digraph VAR_BLOCK {
     C -> D
     D -> E
     D -> F
+    D -> I
+    D -> J
     E -> G
     E -> H
     F -> G
     F -> H
     G -> C
     H -> end
+    I -> G
+    I -> H
+    J -> G
+    J -> H
 }

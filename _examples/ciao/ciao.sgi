@@ -5,7 +5,9 @@ TERMINALS:
     code ::= '\{[^\}]*\}';
     char_key ::= '[\/\(\),.:(->)(:=)]'.
 
-KEYS: 'VAR'; 'REQUIRED'; 'PROVIVED'; 'INNER';  'STATE'; 'else'; '/'; '('; ')'; ','; '.'; ':'; '->'; ':='.
+KEYS:
+    'VAR'; 'REQUIRED'; 'PROVIVED'; 'INNER';  'STATE';
+    'else'; 'false'; 'true'; '/'; '('; ')'; ','; '.'; ':'; '->'; ':='.
 
 NONTERMINALS:
     CIAO;
