@@ -96,7 +96,7 @@ with open(templateDirectory / dslInfoTemplateName, 'r') as templateFile:
 terminalsRegularExpressionsTemplate = '    (Terminal.{}, r"{}"),\n'
 terminalsRegularExpressions = "\n"
 for terminal in terminals:
-    terminalsRegularExpressions += terminalsRegularExpressionsTemplate.format(terminal[0], terminal[1].replace('"', '//"'))
+    terminalsRegularExpressions += terminalsRegularExpressionsTemplate.format(terminal[0], terminal[1].replace('"', '\\"'))
 
 keysStr = "\n"
 for key in keys:
