@@ -9,8 +9,8 @@ digraph INNER_BLOCK {
     start -> A
     A -> B
     B -> C
-    C -> G
-    C -> H
+    C -> G [label="automataObject.AddInner$ATTRIBUTE$"]
+    C -> H [label="automataObject.AddInner$ATTRIBUTE$"]
     G -> C
     H -> end
 }

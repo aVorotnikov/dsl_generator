@@ -9,8 +9,8 @@ digraph PROVIDED_BLOCK {
     start -> A
     A -> B
     B -> C
-    C -> G
-    C -> H
+    C -> G [label="automataObject.AddProvided$ATTRIBUTE$"]
+    C -> H [label="automataObject.AddProvided$ATTRIBUTE$"]
     G -> C
     H -> end
 }

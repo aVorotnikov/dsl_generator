@@ -9,8 +9,8 @@ digraph REQUIRED_BLOCK {
     start -> A
     A -> B
     B -> C
-    C -> G
-    C -> H
+    C -> G [label="automataObject.AddRequired$ATTRIBUTE$"]
+    C -> H [label="automataObject.AddRequired$ATTRIBUTE$"]
     G -> C
     H -> end
 }

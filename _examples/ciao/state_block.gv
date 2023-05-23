@@ -9,8 +9,8 @@ digraph STATE_BLOCK {
     start -> A
     A -> B
     B -> C
-    C -> D
-    C -> E
+    C -> D [label="automataObject.AddTransition($ATTRIBUTE$)"]
+    C -> E [label="automataObject.AddTransition($ATTRIBUTE$)"]
     D -> C
     E -> end
 }
