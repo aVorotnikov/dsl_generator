@@ -3,11 +3,11 @@ TERMINALS:
     name ::= '[\w\D][\w]*';
     string ::= '"(\\.|[^\\"]+)"';
     code ::= '\{[^\}]*\}';
-    char_key ::= '[\/\(\),.:(->)(:=)]'.
+    char_key ::= '/|\(|\)|,|;|\.|:|=|\->'.
 
 KEYS:
     'VAR'; 'REQUIRED'; 'PROVIVED'; 'INNER';  'STATE';
-    'else'; 'false'; 'true'; '/'; '('; ')'; ','; '.'; ':'; '->'; ':='.
+    'else'; 'false'; 'true'; '/'; '('; ')'; ','; '.'; ':'; '->'; '='.
 
 NONTERMINALS:
     CIAO;
