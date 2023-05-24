@@ -62,9 +62,10 @@ def GetSyntaxDesription(diagramsDir, sgiFilePath):
                              for edge in edges if edge.obj_dict["points"][0] == nodeName]
             for edge in outgoingEdges:
                 if len(edge[1]) != 0 and edge[1][0] == '"':
-                    node.nextNodes.append((virtNodes[edge[0]], edge[1][1:-1]))
+                    code = edge[1][1:-1]
                 else:
-                    node.nextNodes.append((virtNodes[edge[0]], edge[1]))
+                    code = edge[1]
+                node.nextNodes.append((virtNodes[edge[0]], code.replace('\\"', '"')))
 
         res[Nonterminal[diagram.get_name()]] = startArray[0]
 

@@ -38,6 +38,9 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
                 start += 1
                 node = next[0]
                 success = True
+                findEnd = [nextNode for nextNode in node.nextNodes if NodeType.END == nextNode[0].type]
+                if len(findEnd) != 0:
+                    exit = findEnd[0]
                 break
             if NodeType.TERMINAL == next[0].type and Token.Type.TERMINAL == newToken.type and newToken.terminalType == next[0].terminal:
                 element = TreeNode(TreeNode.Type.TOKEN)
@@ -48,6 +51,9 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
                 start += 1
                 node = next[0]
                 success = True
+                findEnd = [nextNode for nextNode in node.nextNodes if NodeType.END == nextNode[0].type]
+                if len(findEnd) != 0:
+                    exit = findEnd[0]
                 break
             if NodeType.NONTERMINAL == next[0].type:
                 try:
@@ -58,6 +64,9 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
                     result.commands.append(next[1])
                     node = next[0]
                     success = True
+                    findEnd = [nextNode for nextNode in node.nextNodes if NodeType.END == nextNode[0].type]
+                    if len(findEnd) != 0:
+                        exit = findEnd[0]
                 except Exception:
                     continue
                 break
@@ -66,8 +75,11 @@ def __BuildAstElement(grammarDescription, nonterminal, tokenList, start, end):
         if exit:
             node = exit[0]
             result.commands.append(exit[1])
+            exit = None
         else:
             raise Exception(f"Failed to process token '{newToken.str}'")
+    if exit is not None:
+        result.commands.append(exit[1])
     return result, start, end
 
 
