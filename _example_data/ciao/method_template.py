@@ -1,0 +1,4 @@
+    def {name}({args}):
+        pass
+
+
