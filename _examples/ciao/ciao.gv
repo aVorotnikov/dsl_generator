@@ -2,7 +2,7 @@ digraph CIAO {
     start [label=CIAO shape=plaintext]
     A [label=AUTOMATA_OBJECT shape=box]
     end [label="" shape=point]
-    start -> A
+    start -> A [label="print(\"from enum import Enum\n\n\")"]
     A -> A
     A -> end
 }
