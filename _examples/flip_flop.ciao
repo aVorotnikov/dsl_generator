@@ -17,8 +17,8 @@ INNER:
 
 STATE:
     entry -> / -> ready;
-    ready -> {button} / -> check;
+    ready -> {self.button} / -> check;
     check -> {isItLightOutside()} / -> error;
     check -> else / {turnOnLamp()} -> wait;
-    wait -> {not button} / {turnOffLamp()} -> ready;
-    error -> / {printInfo("It is light outside")} -> exit.
+    wait -> {not self.button} / {turnOffLamp()} -> ready;
+    error -> / {self.__printInfo("It is light outside")} -> exit.
