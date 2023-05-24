@@ -23,5 +23,5 @@ digraph AUTOMATA_OBJECT {
     D -> E
     D -> F
     E -> F
-    F -> end [label="automataObject.print()"]
+    F -> end [label="print(str(automataObject))"]
 }
