@@ -6,5 +6,8 @@
             "diagrams": "_examples/ciao"
         }
     },
+    "semantics": {
+        "type": "virt"
+    },
     "debugInfoDir": "_debug"
 }

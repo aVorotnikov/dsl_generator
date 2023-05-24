@@ -62,6 +62,22 @@ def __RenderAst(diagramName, ast, debugInfoDir):
     h.render(directory=debugInfoDir, view=True)
 
 
+def __GetRCode(node):
+    key = "$ATTRIBUTE$"
+    if TreeNode.Type.NONTERMINAL != node.type:
+        return ""
+    res = node.commands[0]
+    if -1 != res.find(key):
+        raise RuntimeError("Attribute must not be used in first edge")
+    for i in range(len(node.childs)):
+        childCode = __GetRCode(node.childs[i])
+        if len(childCode) != 0:
+            res = res + ("\n" if len(res) != 0 else "") + childCode
+        if len(node.commands[i + 1]) != 0:
+            res = res + ("\n" if len(res) != 0 else "") + node.commands[i + 1].replace(key, repr(node.childs[i].attribute))
+    return res
+
+
 parser = ArgumentParser(prog="create_ast", description="Create AST")
 parser.add_argument("-c", "--code", dest="codeFile", help="File with code", metavar="FILE", required=True)
 parser.add_argument("-j", "--json", dest="jsonFile", help="Json file with settings", metavar="FILE", required=True)
@@ -91,3 +107,8 @@ ast = BuildAst(syntaxInfo, dsl_info.axiom, tokenList)
 __RenderAst('ast', ast, debugInfoDir)
 attributor.SetAttributes(ast, attribute_evaluator.attributesMap)
 __RenderAst('ast_attributed', ast, debugInfoDir)
+
+if debugInfoDir is not None and "semantics" in jsonData and "virt" == jsonData["semantics"]["type"]:
+    rCode = __GetRCode(ast)
+    with open(f"{debugInfoDir}/r_code.py", 'w') as codeFile:
+        codeFile.write(rCode)
