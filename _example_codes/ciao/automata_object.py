@@ -130,7 +130,7 @@ class AutomataObject:
         innerStr = ""
         for inner in self.inners:
             innerStr = innerStr + methodTemplate.format(
-                name = inner.name,
+                name = "__" + inner.name,
                 args=AutomataObject.__SeparatedArray(inner.args))
 
         providedStr = ""
