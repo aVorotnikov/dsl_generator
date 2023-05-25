@@ -90,11 +90,9 @@ class AutomataObject:
 
 
     def __SeparatedArray(array, sep = ', '):
-        if len(array) == 0:
-            return ""
-        res = array[0]
-        for i in range(1, len(array)):
-            res = res + sep + array[i]
+        res = ""
+        for el in array:
+            res = res + sep + el
         return res
 
 

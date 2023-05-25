@@ -1,4 +1,4 @@
-    def {name}({args}):
+    def {name}(self{args}):
         pass
 
 
