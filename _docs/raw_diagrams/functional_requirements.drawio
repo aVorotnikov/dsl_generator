@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-30T20:32:05.644Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="wv5jIfqgwzuus-1Mi77U" version="21.3.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-05-30T20:37:01.822Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="uXUi-Ug10_xC1KmMlbnj" version="21.3.6" type="github">
   <diagram name="Страница 1" id="8D5e6CIdS5LXI-yu4CyA">
     <mxGraphModel dx="1434" dy="788" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -145,23 +145,23 @@
             <mxPoint x="212" y="255" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="TSzH0Voplvb5RTRiOyQG-1" value="Использовать средства визуального программирования" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" parent="1" vertex="1">
-          <mxGeometry x="432.5" y="275" width="170" height="50" as="geometry" />
+        <mxCell id="TSzH0Voplvb5RTRiOyQG-3" value="" style="endArrow=block;html=1;rounded=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="PQ-Pua-dtJ0oL_gtjQtm-1" target="Anj1RyAsjDltY7r4P9pl-18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="602.5" y="300" as="sourcePoint" />
+            <mxPoint x="630" y="235" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="TSzH0Voplvb5RTRiOyQG-3" value="" style="endArrow=block;html=1;rounded=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="TSzH0Voplvb5RTRiOyQG-1" target="Anj1RyAsjDltY7r4P9pl-18" edge="1">
+        <mxCell id="DVEPtvgjuwzgTywLxaop-1" value="" style="endArrow=block;html=1;rounded=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DVEPtvgjuwzgTywLxaop-2" target="wog_7A3qyugUQVRyv6yI-14" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="597" y="185" as="sourcePoint" />
             <mxPoint x="630" y="235" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="DVEPtvgjuwzgTywLxaop-1" value="" style="endArrow=block;html=1;rounded=0;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DVEPtvgjuwzgTywLxaop-2" target="wog_7A3qyugUQVRyv6yI-14">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="597" y="185" as="sourcePoint" />
-            <mxPoint x="630" y="235" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="DVEPtvgjuwzgTywLxaop-2" value="Задать автоматные объекты" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+        <mxCell id="DVEPtvgjuwzgTywLxaop-2" value="Задать автоматные объекты" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
           <mxGeometry x="244" y="140" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PQ-Pua-dtJ0oL_gtjQtm-1" value="Использовать средства визуального программирования" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="432.5" y="275" width="170" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
